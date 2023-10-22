@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class base
+{
+public:
+    int v1;
+    virtual void display()
+    {
+        cout << "To print the var1 " << v1 << endl;
+    }
+};
+
+class derived : public base
+{
+public:
+    int v2;
+    void display()
+    {
+        cout << "To print the var1 " << v1 << endl;
+        cout << "To print the var2 " << v2 << endl;
+    }
+};
+int main()
+{
+    base *bptr;
+    base obj_base;
+    derived obj_derived;
+    bptr = &obj_derived;
+
+    bptr->v1 = 78;
+    // bptr->display();
+    // bptr->v2 = 744448;
+    bptr->display();
+
+    return 0;
+}
